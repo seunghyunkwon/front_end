@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"> <!--html 문서의 기본구조 : html, head, body 태그로 구성-->
+                <!--웹접근성 : 시각장애인 등도 웹을 사용할 수 있게 하는 방법이 제공되어야한다.
+                ex) 스크린리더기 등에서 사용할 언어 표시 lang="en"-->
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day01_첫번째 컨텐츠</title> <!--브라우저에 표시, 북마크 제목-->
+</head>
+<body> <!-- 컨텐츠 측 내용이 들어가는 부분-->
+<!-- 참고 사이트 : 1)https://developer.mozilla.org/ 2)https://www.w3schools.com-->   
+
+
+<!-- 문서의 제목 heading : h1~h6 태그 사용 웹표준에서 h1태그는 문서에 1번만 쓰도록 한다.-->
+<h1>웹 표준</h1>
+<hr> <!--수평선 line-->
+
+<p> <!--문단 설정 paragraph-->
+웹 표준은 월드 와이드 웹의 측면을 서술하고 정의하는 공식 표준이나 다른 기술 규격을 가리키는 일반적인 용어이다. 
+최근에 이 용어는 웹 사이트를 작성하는 데 중요도가 높아지고 있으며 웹 디자인, 개발과 관계가 있다.
+</p>
+
+<p>
+수많은 상호 의존성이 있는 표준들과 규격들 가운데 일부는 단지 월드 와이드 웹으로만 끝나는 것이 아니라, 인터넷의 관리 측면이기도 하다. 
+이러한 표준들은 직간접적으로 웹 사이트, 웹 서비스 개발과 관리에 영향을 주고 있다. 
+이러한 것들 모두 "웹 표준"이라고 부르지만 웹 표준으로 이동하는 것을 찬성하는 사람들은 사용성과 접근성에 직접 영향을 미치는 더 높은 수준의 표준에 초점을 두는 경향이 있다. 
+더 넓은 뜻의 웹 표준은 다음을 이룬다:
+</p>
+
+<h3>관련 지침</h3>
+<!-- 리스트 태그들 중에 순서없는 리스트 : ul 태그 -->
+<ul> <!--Unordered list : 순서가 없는 리스트-->
+    <li>W3C (World Wide Web Consortium)</li>
+    <li>국제 인터넷 표준화 기구 (IETF)가 출판한 인터넷 표준 (STD) 문서</li>
+    <li>국제 인터넷 표준화 기구 (IETF)가 출판한 RFC (Request for Comments) 문서</li>
+    <li>국제 표준화 기구(ISO)가 출판한 표준들</li>
+    <li>Ecma 인터내셔널 (이전 이름은 ECMA)이 출판한 표준들</li>
+    <li>유니코드 컨소시엄이 출판한 유니코드 표준과 다양한 유니코드 기술 보고서 (UTR)</li>
+    <li>인터넷 할당 번호 기관 (IANA)이 운영하는 이름과 번호 레지스트리</li>
+</ul>
+
+<!-- 연습하기 : dl 태그 사용 -->
+<!-- 용어정리 : html, www, html element(요소), url-->
+<h3>주요 용어</h3>
+<dl>
+    <dt>html(Hypertext Markup Language)</dt>
+    <dd>하이퍼 텍스트 마크업 언어는 웹 페이지를 위한 지배적인 마크업 언어다. 
+        또한, HTML은 제목, 단락, 목록 등과 같은 본문을 위한 구조적 의미를 나타내는 것뿐만 아니라 링크, 인용과 그 밖의 항목으로 구조적 문서를 만들 수 있는 방법을 제공한다.</dd>    
+    <dt>www(World Wide Web)</dt> 
+    <dd>월드 와이드 웹은 인터넷에 연결된 컴퓨터를 통해 사람들이 정보를 공유할 수 있는 전 세계적인 정보 공간을 말한다.</dd>
+    <dt>html element</dt>
+    <dd>HTML 요소는 HTML 문서나 웹 페이지를 이루는 개별적인 요소를 의미하며, 문서 객체 모델(DOM)으로 파싱된다.</dd>
+    <dt>URL(Uniform Resource Locator)</dt>
+    <dd>- web address</dd>
+    <dd>네트워크 상에서 자원이 어디 있는지를 알려주기 위한 규약이다. </dd>
+</dl>
+
+<!-- 실행 방법
+1) ctrl + F5 실행시 : 서버동작없이 로컬컴퓨터에 저장된 파일을 불러와서 브라우저에서 보여준다. 
+브라우저 url주소 : file:///E:/front_end/day01/1_%EC%B2%AB%EB%B2%88%EC%A7%B8%EC%BB%A8%ED%85%90%EC%B8%A0.html
+
+2) live server 실행시 : 실제 웹서버 동작처럼 http 프로토콜을 사용한다. 서버는 로컬컴퓨터 (ip는 127.0.0.1), port는 5500이다.
+브라우저 url주소 : 
+
+localhost는 내 컴퓨터에서 실행중인 서버이고 내 컴퓨터의 프로그램들만 연결할 수 있는 서버이다. ip는 127.0.0.1 
+-->
+
+
+</body>
+</html>
