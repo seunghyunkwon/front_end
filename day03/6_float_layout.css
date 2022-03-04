@@ -1,0 +1,19 @@
+img {
+    float: right;
+  }
+  div {
+    float: left;
+    padding: 15px; 
+  }
+  
+  .div1 {
+    background: red;
+  }
+  
+  .div2 {
+    background: yellow;
+  }
+  
+  .div3 {
+    background: green;
+  }

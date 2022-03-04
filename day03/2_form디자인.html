@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font awesome 이라는 자바스크립트 라이브러리 -->
+    <script src="https://kit.fontawesome.com/88ced05b7c.js" crossorigin="anonymous"></script>
+</head>
+<style>  
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+
+    *{ /* 모든 요소*/
+        font-family: 'Dokdo', cursive;
+    }
+    table{
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+    }
+    td{
+        padding: 10px;
+        border:1px dashed gray; /*가이드선*/
+    }
+    input,select{
+        padding: 6px;
+        border-radius: 4px;
+        border: 2px solid #ccc;
+    }
+    input[type=text],input[type=password],input[type=email]{
+        width: 70%;
+        
+    }
+    input[type=number]{
+        width: 11%;
+        text-align: center;
+    }
+    label.main{
+        display: inline-block;
+        padding: 10%;
+        width: 70%;
+        background-color: palevioletred;
+        border-radius: 4px;
+        text-align: center;
+        color: white;
+    }
+    button{
+        padding: 7px 15px;
+        margin: 7px;
+        background-color: rgba(228, 37, 171, 0.849);
+        border: none;
+        color: white;
+        font-size: 1.1em;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    /* 선택자 : 마우스가 놓여질 때 변경될 xxx*/
+    button:hover{
+        background-color: rgb(105, 26, 179);
+    }
+</style>
+<body>
+<div style="width:70%;margin:auto;"><!-- table을 포함하는 박스-->
+    <h3 style="text-align: center;"><i class="fa-solid fa-bus">회원등록</i></h3>
+<form action="">  
+    <table style="width:100%">
+        <tr>
+            <td><label for="name" class="main">이름</label></td>
+            <td><input type="text" id="name" name="name"></td>
+        </tr>
+        <tr>
+            <td><label for="password" class="main">패스워드</label></td>
+            <td><input type="password" id="password" name="password"></td>
+        </tr>
+        <tr>
+            <td><label for="email" class="main">이메일</label></td>
+            <td><input type="email" id="email" name="email"></td>
+        </tr>
+        <tr>
+            <td><label for="age" class="main">나이</label></td>
+            <td><input type="number" value="30" min="20" max="40" id="age" name="age"></td>
+        </tr>
+        <tr>
+            <td><label for="address" class="main">주소</label></td>
+            <td>
+                <select name="address" id="address">
+                    <option value="서울">서울</option>
+                    <option value="인천">인천</option>
+                    <option value="대전" selected="selected">대전</option> <!-- 초기 선택 설정 -->
+                    <option value="광주">광주</option>
+                    <option value="부산">부산</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for=""class="main">성별</label></td>
+            <td>
+                <input type="radio" name="gender" checked="checked" id="male" value="male">
+                <label for="male">남자</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">여자</label>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="" class="main">취미</label></td>
+            <td>
+                <input type="checkbox" id="hob1"name="hobby" value="축구">
+                <label for="hob1">축구</label>
+                <input type="checkbox" id="hob2"name="hobby" value="농구">
+                <label for="hob2">농구</label>
+                <input type="checkbox" id="hob3"name="hobby" value="스키">
+                <label for="hob3">스키</label>
+                <input type="checkbox" id="hob4"name="hobby" value="달리기">
+                <label for="hob4">달리기</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <!-- <input type="submit" value="가입하기1"> -->
+                <button type="submit">가입하기</button>
+                <!-- <input type="reset" value="다시쓰기">  -->
+                <button type="reset">다시쓰기</button>
+            </td>
+        </tr>
+
+    </table>
+</form>
+</div>
+</body>
+</html>
