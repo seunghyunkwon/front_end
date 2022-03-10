@@ -36,7 +36,7 @@
     </tbody>
 
     </table>
-    <button onclick="add_schedule()">일정 추가하기</button>
+    <button onclick="add_schedule()">일정 추가하기</button>  <!--함수사용 1) 이벤트성--> 
     <script>
         const time=['09:00','11:00','12:30','14:00','16:45']
         const todo=['수업','과제','점심식사','주간회의','자료조사']
@@ -49,15 +49,28 @@
         //??
      
 
+        /*
         let contents_ =''
         schedule.forEach(function(val,idx,arr){
             // contents_+=`<tr><${val}</tr>`;
             contents_+=`<tr><td>${val.time}</td><td>${val.todo}</td></tr>`;
         })
         document.getElementById("contents").innerHTML=contents_;
+        */
+        set_tbody();    //함수 호출 : 함수정의가 뒤에 있어도 호출에 오류가 없다.
+                        //  ㄴ var, function 은 자바스크립트가 선언부분을 맨 앞으로 올린다.(hoisting)
 
+        //함수사용 2) 반복해서 사용된 코드를 함수로 정의하여 재사용한다.(호출)
+        function set_tbody(){ //함수 이름은 식별자(개발자가 알아서 이해하는 단어로 생성하는 것)
+           
+            let contents_ =''
+        schedule.forEach(function(val,idx,arr){
+            // contents_+=`<tr><${val}</tr>`;
+            contents_+=`<tr><td>${val.time}</td><td>${val.todo}</td></tr>`;
+        })
+        document.getElementById("contents").innerHTML=contents_;
 
-      
+        }
       
         function add_schedule(){
             // const schedule=[];
@@ -69,13 +82,15 @@
             schedule.push({time:atime,todo:atodo})  //배열에 새로운 객체 항목을 추가한다.
             //tbody안에 원래 내용은 ''로 비우고 새로 변경된 배열로 tr태그를 넣어준다.
             //??
+            /*
             let contents_ =''
         schedule.forEach(function(val,idx,arr){
             contents_+=`<tr><td>${val.time}</td><td>${val.todo}</td></tr>`;
         })
         document.getElementById("contents").innerHTML=contents_;
-        }
-
+        */
+       set_tbody();
+    }
     </script>
 
 </body>
