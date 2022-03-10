@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        width:80%;
+    }
+    td{
+        border: 1px solid tomato;
+        padding: 7px 12px;
+        text-align: center;
+    }
+    th{
+        background-color: tomato;
+        color: white; 
+        padding: 7px 12px;
+    }
+</style>
+<body>
+
+    <table> 
+    <tr>
+        <th>TIME</th>
+        <th>TODO</th>
+    </tr>
+
+    <tbody id="contents">
+        <tr>
+
+        </tr>
+    </tbody>
+
+    </table>
+    <button onclick="add_schedule()">일정 추가하기</button>
+    <script>
+        const time=['09:00','11:00','12:30','14:00','16:45']
+        const todo=['수업','과제','점심식사','주간회의','자료조사']
+        //객체의 배열
+        const schedule = [{time:'09:00',todo:'수업'},
+                          {time:'11:00',todo:'과제'},
+                          {time:'12:30',todo:'점심식사'},
+                          {time:'14:00',todo:'주간회의'},
+                          {time:'16:45',todo:'자료조사'}]
+        //??
+     
+
+        let contents_ =''
+        schedule.forEach(function(val,idx,arr){
+            // contents_+=`<tr><${val}</tr>`;
+            contents_+=`<tr><td>${val.time}</td><td>${val.todo}</td></tr>`;
+        })
+        document.getElementById("contents").innerHTML=contents_;
+
+
+      
+      
+        function add_schedule(){
+            // const schedule=[];
+            //prompt 이용해서 시간과 할일을 각각 입력받기
+            let atime=prompt('시간을 입력하세요')
+            let atodo=prompt('일정을 입력하세요')
+
+            //입력받은 내용으로 scheule배열에 추가하기
+            schedule.push({time:atime,todo:atodo})  //배열에 새로운 객체 항목을 추가한다.
+            //tbody안에 원래 내용은 ''로 비우고 새로 변경된 배열로 tr태그를 넣어준다.
+            //??
+            let contents_ =''
+        schedule.forEach(function(val,idx,arr){
+            contents_+=`<tr><td>${val.time}</td><td>${val.todo}</td></tr>`;
+        })
+        document.getElementById("contents").innerHTML=contents_;
+        }
+
+    </script>
+
+</body>
+</html>

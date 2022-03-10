@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        width:80%;
+    }
+    td{
+        border: 1px solid tomato;
+        width: 10%;
+        padding: 7px 12px;
+        text-align: center;
+    }
+    th{
+        width: 13%;
+        background-color: tomato;
+        color: white; 
+        padding: 7px 12px;
+    }
+</style>
+<body>
+
+    <table style="margin:auto">
+     <tr id="time">
+     
+    </tr>
+     <tr id="todo">
+
+     </tr>
+
+    </table>
+    <script>
+        //시간표 테이블을 완성하기. forEach메소드와 콜백함수 활용
+        const time=['09:00','11:00','12:30','14:00','16:45']
+        const todo=['수업','과제','점심식사','주간회의','자료조사']
+        let time_='<th>Time</th>'
+            time.forEach(function(val,idx,array){
+                time_+=`<td>${val}</td>`;
+            });
+        document.getElementById('time').innerHTML=time_;
+        
+        let todo_='<th>ToDo</th>'
+            todo.forEach(function(val,idx,array){
+                todo_+=`<td>${val}</td>`;
+            });
+        document.getElementById('todo').innerHTML=todo_;
+            
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+html,body{
+    padding: 0px;
+    margin-top: -20px;
+    margin-left: 0px;
+    width: 100%;
+}
+body{
+    line-height: 1;
+}
+nav{
+    padding-top: 75px;
+    font-size: 70%
+}
+
+nav.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+.header-item{
+    background-color: rgb(75, 119, 241);
+    box-sizing: border-box; /* width,height 계산할 때 padding,border-width포함시킨다.*/
+    height: 5rem;
+    color: white;
+    padding-top: 2rem;
+    /* em: 상위태그의 크기에 대한 상대비율 , rem: root html 에 대한 상대크기
+    em은 부모태그 상테에 따라 달라지는 값, rem은 항상 html태그 기준이므로 상대적인 비율 계산이 단순
+    1rem은 html 태그의 기본 글꼴 크기(px), 브라우저마다 차이가 있는데 대략 16~17px*/
+    margin-bottom: 0;
+    text-align: center;
+}
+.container{
+    background-color: rgb(206, 139, 233);
+    width: 100%;
+    padding: 12px 8px;
+    top: 0px;
+    display: flex ;
+    /*flex-direction: row; = 기본값*/
+    justify-content: left;
+    margin-top: 0;
+    
+}
+.container > li{ /* .container 클래스 요소의 자식 태그 li 적용*/
+    list-style: none;
+    /* padding: 8px 18px; */
+    margin: 8px 12px;
+    font-size: 1.2em;
+
+}
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-top: -20px;
+    width: 100%;
+    z-index: 10;
+}
+main{
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 1rem; /* 위에만 내부여백 설정 rem단위는 찾아보기*/
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.container > li:hover {
+    background-color: coral;
+    border-radius: 4px;
+}
+@media screen and (max-width:768px) {
+    .container{
+        flex-direction: column;
+    }
+    .container > li {
+        text-align: center;
+    }
+}
+footer{
+    background-color: rgb(75, 119, 241);
+    color: white;
+    height: 40px;
+    clear: both;
+    text-align: center;
+    line-height: 40px;
+}
+section{
+    float: left;
+    padding: 5px;
+    width: 100%;
+    background-color: lightgray;
+    padding-bottom: 300px ;
+   
+}
