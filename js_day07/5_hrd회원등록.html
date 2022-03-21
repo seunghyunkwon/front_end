@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day04_쇼핑몰 회원관리_회원등록</title>
+    <link rel="stylesheet" href="6_hrdkorea.css">
+</head>
+<body>
+    <header>
+            <h2 class="header-item">쇼핑몰 회원관리 ver1.0</h2>
+        </header>
+            <nav class="sticky">
+                <ul class="container">
+                    <li><a href="2_memberReg.html"><b>회원등록</b></a></li>
+                    <li><a href="3_memberList.html"><b>회원목록조회/수정</b></a></li>
+                    <li><a href="4_sales.html"><b>회원매출조회</b></a></li>
+                    <li><a href="1_home.html"><b>홈으로</b></a></li>
+                </ul>
+            </nav>
+    <section>
+        <h4 style="text-align: center;">홈쇼핑 회원 등록</h4>
+        <form action=""> <!--action으로 설정된 url로 입력요소에 작성된 데이터를 서버로 전송한다.-->
+            <table style="width: 70%;margin:auto;">
+                <tr>
+                    <td class="col1_title">회원번호(자동발생)</td>
+                    <td><input type="text" name="num"></td> <!--입력요소 데이터 식별하는 속성은 name-->
+                </tr>
+                <tr>
+                    <td class="col1_title">회원성명</td>
+                    <td><input type="text" name="name" ></td>
+                    <!-- required="required"를 지우고 함수에서 표현 -->
+                </tr>
+                <tr>
+                    <td class="col1_title">회원전화</td>
+                    <td><input type="text" name="tel" size="30"></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">회원주소</td>
+                    <td><input type="text" name="addr" size="40"></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">가입일자</td>
+                    <td><input type="text" name="reg_date"></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">고객등급[A:VIP,B:일반,C:직원]</td>
+                    <td><input type="text" name="grade"></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">도시코드</td>
+                    <td><input type="text" name="city_code"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center;">
+                    <button type="submit">등록</button>
+                    <button onclick="location.href='3_memberList'">조회</button>
+                    <button onclick="valid_check()" type="button">유효성검사</button>    
+                <!-- button로 링크 또는 기능 설정하기
+                    onclick 이벤트와 자바스크립트 명령을 이용한다.
+                location.href는 a태그의 href속성설정과 같은 내용이다. -->
+                </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    <footer>
+        HRDKOREA Copyrightⓒ2016 All rights reserved. Human Resources Development Service of Korea.
+    </footer>
+    <script>
+        const reg = document.forms[0].reg_date;
+        const today = new Date();
+        const year =today.getFullYear();
+        const month = (today.getMonth()+1).toString().padStart(2,0);
+        const day = today.getDate().toString().padStart(2,0);
+        reg.value=[year,month,day].join('');
+        // document.getElementById('reg_date')(year.toString()+month.toString().padStart(2,0)+day.toString().padStart(2,0))
+
+        function valid_check(){
+        const frm = document.forms[0]
+           const name_ = frm.name
+           const tel_ = frm.tel
+           const addr_ = frm.addr
+           const grade_ = frm.grade.value
+           const grades = ['A', 'B', 'C', 'D']
+           const city_ = frm.city_code.value
+           const temp = parseInt(city_);
+           //city_에 시작문자가 숫자가 아니면 정수변환이 안되고 결과값이 NaN이 된다.
+        //    console.log(`테스트 : ${cityf.split('')} (${typeof cityf})}`)
+           let isValid=true;
+       if(name_.value == ""){
+             alert('이름 입력은 필수입니다.')
+             name_.focus()
+             isValid=false;
+           }
+           else if(tel_.value == ""){
+             alert('회원전화 입력은 필수입니다.')
+             tel_.focus()
+             isValid=false;
+           }
+           else if(addr_.value == ""){
+             alert('회원주소 입력은 필수입니다.')
+             addr_.focus()
+             isValid=false;
+           }else 
+
+           /*if(!(grade_ =="A"||grade_ =="B"||grade_ =="C")) {
+                    alert('고객등급 입력은 필수입니다.');
+                    grade_.focus()
+                    isValid= false;
+           }
+           */ //검사할 값이 많이질 때 배열을 이용한다.
+           if(grades.indexOf(grade_)==-1){
+            alert('고객등급 입력은 필수입니다.');
+            isValid=false;
+           }else
+           /*
+           if(isNaN(temp) || temp<10 || temp>99 || city_.length !=2){
+               //NaN : Not a Number, 자바스크립트의 데이터값 중 하나이다. 
+               //      실행결과로만 도출되는 데이터 isNaN은 temp 변수값이 NaN인지 검사한다.
+                alert('2자리 숫자로만 입력해야한다.')
+                isValid=false;
+           }
+           */ //위 코드를 대체할 forEach
+           if(city_.length != 2){
+               alert('도시코드는 2자리 숫자입니다.')
+               isValid=false;
+           }else{   //코드의 자릿수가 커서 검사할 요소가 많을 때
+            let cnt=0;
+          city_.split('').forEach(function(value){
+            //city_ 문자열 데이터를 배열로 변환하고 각 요소값으로 이 함수를 실행한다.
+            //이 때 문자는 처리조건에 따라 0~9 사이이어야한다.
+            if(!(value >='0' && value<='9')){
+                isValid=false;
+                cnt++;
+            }
+          })
+          if(cnt>0)
+            alert('도시코드는 숫자만 입력하세요.')
+        }
+
+           if(isValid){
+             alert('유효성 검사 통과!')
+            }else
+             alert('유효성 검사 실패!')
+        }
+             /*
+           가입일자에 현재날짜 입력하기
+           테스트
+           const date = new Date();
+           console.log(d.getFullYear(),d.getMonth()+1,d.getDate());
+           html출력하기
+           const date = new Date();
+           document.getElementById('reg_date').innerHTML=d.getFullYear(),d.getMonth()+1,d.getDate();
+            출력안됨
+           input 형식에 값을 입력하려면 value 값을 넣어야 출력이 되던데...    
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = date.getMonth()+1;
+            const day = date.getDate();
+            document.getElementById('date').innerHTML= year+month+day.value;
+            출력안됨
+             const date = new Date();
+            const year = date.getFullYear();
+            const month = date.getMonth()+1;
+            const day = date.getDate();
+           document.getElementById('date').innerHTML.value= year+month+day;
+            input에 id값 date 입력해도 출력안됨
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = date.getMonth()+1;
+            const day = date.getDate();
+           document.getElementById('date').innerHTML.value;    
+           출력안됨
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = date.getMonth()+1;
+            const day = date.getDate();
+           
+            var ddate = date;
+            $('input[name=reg_date]').attr('value',ddate);
+            출력안됨
+            */
+           
+        </script>
+</body>
+</html>

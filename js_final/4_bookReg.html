@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서대여관리프로그램만들기
+    </title>
+    <link rel="stylesheet" href="0_hrdkorea.css">
+</head>
+<body>
+    <div class="wrap_container">
+    <header>
+        <h2 class="header-item">도서대여관리 ver1.0</h2>
+    </header>
+        <nav class="sticky">
+            <ul class="container">
+                <li><a href=""><b>회원등록</b></a></li>
+                <li><a href=""><b>회원목록조회/수정</b></a></li>
+                <li><a href=""><b>도서목록조회/수정</b></a></li>
+                <li><a href="4_bookReg.html"><b>도서등록</b></a></li>
+                <li><a href="2_bookRent.html"><b>도서대여</b></a></li>
+                <li><a href="3_bookReturn.html"><b>도서반납</b></a></li>
+                <li><a href="1_home.html"><b>홈으로</b></a></li>
+            </ul>
+        </nav>
+    <section>
+        <h4 style="text-align: center;">도서대여관리 프로그램</h4>
+        <form action=""> 
+            <table style="width: 70%;margin:auto;">
+                <tr>
+                    <td class="col1_title">도서번호</td>
+                    <td><input type="text" name="num" placeholder="자 동 생 성"></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">도서명</td>
+                    <td><input type="text" name="bookname" placeholder="도서명을 입력하세요."></td>
+                    
+                </tr>
+                <tr>
+                    <td class="col1_title">지은이</td>
+                    <td><input type="text" name="author" size="20" placeholder="지은이를 입력하세요."></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">입고일자</td>
+                    <td><input type="text" name="reg_date"></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">도서상태[A:좋음,B급:보통,C급:나쁨]</td>
+                    <td><input type="text" name="grade" placeholder="도서 상태를 입력하세요."></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">도서코드</td>
+                    <td><input type="text" name="book_code" placeholder="도서 코드를 입력하세요">
+                        <button type="button" onclick="valid_check()">등록</button></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    <footer>
+        HRDKOREA Copyrightⓒ2016 All rights reserved. Human Resources Development Service of Korea.
+    </footer>
+    <script>
+        const reg = document.forms[0].reg_date;
+        const today = new Date();
+        const year =today.getFullYear();
+        const month = (today.getMonth()+1).toString().padStart(2,0);
+        const day = today.getDate().toString().padStart(2,0);
+        reg.value=[year,month,day].join('');
+
+        function valid_check(){
+        const frm = document.forms[0]
+           const bookname_ = frm.bookname
+           const author_ = frm.author
+           const grade_ = frm.grade.value
+           const grades = ['A', 'B', 'C']
+           const book_ = frm.book_code.value
+           const temp = parseInt(book_);
+
+           let isValid=true;
+       if(bookname_.value == ""){
+             alert('도서명 입력은 필수입니다.')
+             name_.focus()
+             isValid=false;
+           }
+           else if(author_.value == ""){
+             alert('지은이 입력은 필수입니다.')
+             author_.focus()
+             isValid=false;
+           }else 
+
+           if(grades.indexOf(grade_)==-1){
+            alert('도서등급 입력은 필수입니다.');
+            isValid=false;
+           }else
+           if(book_.length != 3){
+               alert('도서코드는 3자리 숫자입니다.')
+               isValid=false;
+           }else{   
+            let cnt=0;
+          book_.split('').forEach(function(value){
+            if(!(value >='0' && value<='9')){
+                isValid=false;
+                cnt++;
+            }
+          })
+          if(cnt>0)
+            alert('도서코드는 숫자만 입력하세요.')
+        }
+           if(isValid){
+             alert('유효성 검사 통과!')
+            }else
+             alert('유효성 검사 실패!')
+        }
+           
+        </script>
+</body>
+</div>
+</html>

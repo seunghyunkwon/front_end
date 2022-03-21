@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서대여관리프로그램만들기</title>
+    <link rel="stylesheet" href="0_hrdkorea.css">
+</head>
+<style>
+    th{
+        background-color: brown;
+        color: white;
+    }
+    th,td{
+        padding: 10px;
+    }
+    td{
+        background-color: antiquewhite;
+    }
+</style>
+<body>
+    <header>
+        <h2 class="header-item">도서대여관리 ver1.0</h2>
+    </header>
+        <nav class="sticky">
+            <ul class="container">
+                <li><a href="7_memberReg.html"><b>회원등록</b></a></li>
+                <li><a href="6_memberList.html"><b>회원목록조회/수정</b></a></li>
+                <li><a href="5_bookList.html"><b>도서목록조회/수정</b></a></li>
+                <li><a href="4_bookReg.html"><b>도서등록</b></a></li>
+                <li><a href="2_bookRent.html"><b>도서대여</b></a></li>
+                <li><a href="3_bookReturn.html"><b>도서반납</b></a></li>
+                <li><a href="1_home.html"><b>홈으로</b></a></li>
+            </ul>
+        </nav>
+    <section>
+        <table style="width: 70%;margin:auto;">
+            <tr> <!--첫번째 행 : 제목행( 자동으로 가운데 정렬 )-->
+                <th style="width: 20%;">도서No</th> <!-- 4개의 칸(열)-->
+                <th style="width: 20%;">도서명</th>
+                <th style="width: 30%;">도서코드</th>
+                <th>주소</th>
+    
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>홍길동</td>
+                <td>010-1111-2222</td>
+                <td>서울시 강남구 역삼동</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>김모모</td>
+                <td>010-3333-4444</td>
+                <td>서울시 종로구</td>
+            <tr>
+                <td>3</td>
+                <td>최나나</td>
+                <td>010-5555-7777</td>
+                <td>경기도 성남시 분당구</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        HRDKOREA Copyrightⓒ2016 All rights reserved. Human Resources Development Service of Korea.
+    </footer>
+</body>
+</html>

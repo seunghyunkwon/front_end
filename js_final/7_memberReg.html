@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서대여관리프로그램만들기</title>
+    <link rel="stylesheet" href="0_hrdkorea.css">
+</head>
+<body>
+    <header>
+            <h2 class="header-item">도서대여관리 ver1.0</h2>
+        </header>
+        <nav class="sticky">
+            <ul class="container">
+                <li><a href="7_memberReg.html"><b>회원등록</b></a></li>
+                <li><a href="6_memberList.html"><b>회원목록조회/수정</b></a></li>
+                <li><a href="5_bookList.html"><b>도서목록조회/수정</b></a></li>
+                <li><a href="4_bookReg.html"><b>도서등록</b></a></li>
+                <li><a href="2_bookRent.html"><b>도서대여</b></a></li>
+                <li><a href="3_bookReturn.html"><b>도서반납</b></a></li>
+                <li><a href="1_home.html"><b>홈으로</b></a></li>
+            </ul>
+        </nav>
+    <section>
+        <h4 style="text-align: center;">도서대여 회원 등록</h4>
+        <form action=""> <!--action으로 설정된 url로 입력요소에 작성된 데이터를 서버로 전송한다.-->
+            <table style="width: 70%;margin:auto;">
+                <tr>
+                    <td class="col1_title">회원번호(자동발생)</td>
+                    <td><input type="text" name="num"></td> <!--입력요소 데이터 식별하는 속성은 name-->
+                </tr>
+                <tr>
+                    <td class="col1_title">회원성명</td>
+                    <td><input type="text" name="name" required></td>
+                    <!-- required="required"를 간단히 표현 -->
+                </tr>
+                <tr>
+                    <td class="col1_title">회원전화</td>
+                    <td><input type="text" name="tel" size="30"></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">회원주소</td>
+                    <td><input type="text" name="addr" size="40"></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">가입일자</td>
+                    <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">고객등급[A:VIP,B:일반,C:직원]</td>
+                    <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                    <td class="col1_title">도시코드</td>
+                    <td><input type="text" name=""></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center;">
+                    <button type="submit">등록</button>
+                    <button onclick="location.href='3_memberList'">조회</button>
+                    <!-- button로 링크 또는 기능 설정하기
+                    onclick 이벤트와 자바스크립트 명령을 이용한다.
+                location.href는 a태그의 href속성설정과 같은 내용이다. -->
+                </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <footer>
+        HRDKOREA Copyrightⓒ2016 All rights reserved. Human Resources Development Service of Korea.
+    </footer>
+</body>
+</html>
